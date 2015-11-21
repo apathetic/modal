@@ -17,7 +17,7 @@
 
 	 *
 	 */
-	modal: (function() {
+	var Modal = (function() {
 		var triggers = document.querySelectorAll('[data-modal]');
 		var modals = document.querySelectorAll('.modal');
 		var active;
@@ -62,4 +62,4 @@
 			hide: hide,
 			bind: bindModal
 		};
-	})(),
+	})();
