@@ -1,29 +1,33 @@
 .modal {
-	display: none;
+	/*display: none;*/
 	background: rgba(0,0,0, 0.75);
-	/*@extend %fullscreen;*/
-	position: absolute;
+	position: fixed;
 	top:0;
-	bottom: 0;
+	/*bottom: 0;*/
 	left: 0;
 	right:0;
-}
 
-.modal.active {
-	display: block;
-	z-index: 1000;
+	height: 0;
+	overflow: hidden;
 }
 
 .modal .content {
-	position: fixed;
 	top: 20vh;
-	left: 50%;
+	left: 25%;
 	width: 50%;
-	transform: translateX(-50%);
+
+	max-height: 60vh;
+	overflow: auto;
+
 	padding: 20px;
 	background: #fff;
 	border-radius: 4px;
 	color: #333;
+
+	transform: translateY(-30px);
+	opacity: 0;
+
+	transition: all 0.4s;
 }
 
 .modal .close {
@@ -35,23 +39,31 @@
 	cursor: pointer;
 	color: #ccc;
 }
+
 .modal .close::after {
-	content: "\2717";
+	content: "\00d7";
+}
+
+.modal.active {
+	/*display: block;*/
+	height: 100%;
+	z-index: 1000;
+}
+
+.modal.active .content {
+	transform: translateY(0);
+	opacity: 1;
 }
 
 .is-modal {
 	overflow: hidden;
-	/*height: 100%;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;*/
 }
 
 
 @media(max-width: 768px) {
 	.modal .content {
 		top: 5vh;
+		left: 10%;
 		width: 80%;
 	}
 }
