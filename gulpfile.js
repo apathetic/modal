@@ -4,7 +4,6 @@ var uglify		= require('gulp-uglify');
 var jshint		= require('gulp-jshint');
 var rename		= require('gulp-rename');
 var connect		= require('gulp-connect');
-var karma		= require('karma');
 
 var PATHS = {
 	css: ['src/*.css'],
@@ -76,4 +75,4 @@ gulp.task('connect', function() {
 
 gulp.task('default', ['build', 'connect']);
 gulp.task('build', ['clean', 'dist']);
-gulp.task('test', ['lint', 'karma']);
+// gulp.task('test', ['lint', 'karma']);
