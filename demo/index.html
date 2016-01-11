@@ -144,6 +144,28 @@ Modal.hide()
 			</div>
 		</section>
 
+
+
+		<div id="terms" class="modal">
+			<i class="icon close"></i>
+			<div class="content">
+				<h3>Hello</h3>
+				<p>Random text here, something important.</p>
+				<p>Here, we showcase one option for the placement of the "close" icon.</p>
+			</div>
+		</div>
+
+		<div id="error" class="modal">
+			<div class="content">
+				<i class="icon close"></i>
+				<h3>Error!</h3>
+				<p>These aren't the droids you're looking for.</p>
+				<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>
+				<p><button class="button" onclick="Modal.hide()">Modal.hide()</button></p>
+			</div>
+		</div>
+
+
 	</main>
 
 	<footer>
@@ -152,24 +174,6 @@ Modal.hide()
 	</footer>
 
 
-	<div id="terms" class="modal">
-		<i class="icon close"></i>
-		<div class="content">
-			<h3>Hello</h3>
-			<p>Random text here, something important.</p>
-			<p>Here, we showcase one option for the placement of the "close" icon.</p>
-		</div>
-	</div>
-
-	<div id="error" class="modal">
-		<div class="content">
-			<i class="icon close"></i>
-			<h3>Error!</h3>
-			<p>These aren't the droids you're looking for.</p>
-			<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>
-			<p><button class="button" onclick="Modal.hide()">Modal.hide()</button></p>
-		</div>
-	</div>
 
 	<script>
 		window.addEventListener('DOMContentLoaded', Modal.init);
