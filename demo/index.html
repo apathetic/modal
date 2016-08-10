@@ -7,24 +7,24 @@
 
 	<title>Modals.</title>
 
-	<link rel="stylesheet" href="styles.css">
-	<script src="../src/modals.js"></script>
-
 	<!-- demo stuffs -->
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/showcase/master/www/css/styles.css">
+	<link rel="stylesheet" href="https://apathetic.github.io/showcase/assets/css/main.min.css">
+	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickyNav.js"></script>
 	<script src="prism.js"></script>
-	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
-			stickyNav.init({ nav: '#sticky' });
+			new stickyNav({ nav: '#sticky' });
 		});
 	</script>
 	<!-- end demo stuffs -->
 
+	<script src="../src/modals.js"></script>
+	<link rel="stylesheet" href="styles.css">
+
 </style>
 <body>
 
-	<header>
+	<header class="condensed align-center">
 		<h1>Modals.</h1>
 	</header>
 
@@ -147,17 +147,17 @@ Modal.hide()
 
 
 		<div id="terms" class="modal">
-			<i class="icon close"></i>
-			<div class="content">
+			<button class="icon close" aria-label="close"></button>
+			<div class="content" role="dialog">
 				<h3>Hello</h3>
 				<p>Random text here, something important.</p>
 				<p>Here, we showcase one option for the placement of the "close" icon.</p>
 			</div>
 		</div>
 
-		<div id="error" class="modal">
-			<div class="content">
-				<i class="icon close"></i>
+		<div id="error" class="modal" tab-index="0">
+			<div class="content" role="dialog">
+				<button class="icon close" aria-label="close"></button>
 				<h3>Error!</h3>
 				<p>These aren't the droids you're looking for.</p>
 				<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>

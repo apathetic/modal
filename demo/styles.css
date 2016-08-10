@@ -34,7 +34,9 @@
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	font-size: 30px;
+	background: none;
+	font-size: 48px;
+  font-family: helvetica;
 	z-index: 900;
 	cursor: pointer;
 	color: #ccc;
@@ -51,7 +53,7 @@
 }
 
 .modal.active .content {
-	transform: translateY(0) scale(0);
+	transform: translateY(0) scale(1);
 	opacity: 1;
 }
 
