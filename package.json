@@ -1,9 +1,9 @@
 {
   "name": "@apatheticwes/modal",
-  "author": "wes hatch",
-  "license": "MIT",
-  "version": "0.1.0",
   "description": "A simple modal framework",
+  "author": "wes hatch",
+  "version": "0.1.0",
+  "license": "MIT",
   "main": "./dist/modal.cjs.js",
   "broswer": "./dist/modal.browser.js",
   "jsnext:main": "./dist/modal.es6.js",
