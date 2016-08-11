@@ -1,28 +1,33 @@
+var Modal = (function () {
+  'use strict';
 
-/**
-  To use:
+  /**
+    To use:
 
-  <button data-modal="#terms">show</button>
+    <button data-modal="#terms">show</button>
 
-  ...
+    ...
 
-  <div id="terms" class="modal">
-    <i class="icon icon-close"></i>
-    <div class="error content">
-      <p>lorem ipsom...</p>
+    <div id="terms" class="modal">
+      <i class="icon icon-close"></i>
+      <div class="error content">
+        <p>lorem ipsom...</p>
+      </div>
     </div>
-  </div>
 
 
-  Or programmatically:
+    Or programmatically:
 
-  Modal.show('#image-error');
-  Modal.hide()
+    Modal.show('#image-error');
+    Modal.hide()
 
- *
- */
+   *
+   */
 
-var Modal = (function() {
+  /**
+   * Accessible Modal Window
+   * @type {Object}
+   */
 
   var active;
 
@@ -51,33 +56,40 @@ var Modal = (function() {
   }
 
   function hide(e) {
-    if (active) { active.classList.remove('active'); active = false; }
+    if (active) {
+      active.classList.remove('active');
+      active = false;
+    }
     document.body.classList.remove('is-modal');
   }
 
-  function bindModal(modal){
+  function bindModal(modal) {
     var content = modal.querySelector('.content');
     var close = modal.querySelector('.close');
 
     modal.addEventListener('click', hide);
     close.addEventListener('click', hide);
-    content.addEventListener('click', function(e){
+    content.addEventListener('click', function(e) {
       e.stopPropagation();
     });
   }
 
-  function bindTrigger(trigger){
+  function bindTrigger(trigger) {
     var targetID = trigger.getAttribute('data-modal');
+
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       show(targetID);
     });
   }
 
-  return {
+  var modal = {
     init: init,
     show: show,
     hide: hide,
     bind: bindModal
   };
-})();
+
+  return modal;
+
+}());
