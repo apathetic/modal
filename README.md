@@ -31,7 +31,7 @@ There is an ES6 module you may consume however you wish. Then:
 ## Methods
 
 | method | args | description |
-| ------ | ----------- |
+| ------ | ----------- | ---- |
 | show() | querySelector (String) | shows the modal that is referenced by the given querySelector |
 | hide() | - | hides the currently-displaying modal |
 | bind() | querySelector (String) | programmatically binds modal functionality to an element |
