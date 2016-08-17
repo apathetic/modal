@@ -16,8 +16,8 @@ There is an ES6 module you may consume however you wish. Then:
 ```javascript
 <!-- modal -->
 <div id="terms" class="modal">
-	<div class="content">
-		<i class="icon icon-close"></i>
+	<div class="modal--content">
+		<i class="modal--close icon-close"></i>
 		<h3>Hello</h3>
 		<p>Random text here, something important.</p>
 	</div>
@@ -33,7 +33,7 @@ There is an ES6 module you may consume however you wish. Then:
 | method | args | description |
 | ------ | ----------- |
 | show() | querySelector (String) | shows the modal that is referenced by the given querySelector |
-| hide() | . | hides the currently-displaying modal |
+| hide() | - | hides the currently-displaying modal |
 | bind() | querySelector (String) | programmatically binds modal functionality to an element |
 
 ## Demo
