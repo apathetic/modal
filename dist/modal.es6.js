@@ -61,8 +61,8 @@ function hide(e) {
 }
 
 function bindModal(modal) {
-  var content = modal.querySelector('.content');
-  var close = modal.querySelector('.close');
+  var content = modal.querySelector('.modal--content');
+  var close = modal.querySelector('.modal--close');
 
   modal.addEventListener('click', hide);
   close.addEventListener('click', hide);

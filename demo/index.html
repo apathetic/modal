@@ -63,13 +63,13 @@
 				<h2>Demo</h2>
 
 				<p>The default uses <em>data-modal</em> attributes as triggers for a particular modal.</p>
-				<p><button class="button" data-modal="#terms">Show Modal</button></p>
+				<p><button class="button button--default" data-modal="#terms">Show Modal</button></p>
 
 				<pre><code class="language-markup">
 &lt;!-- modal -->
 &lt;div id="terms" class="modal">
-	&lt;div class="content">
-		&lt;i class="icon icon-close">&lt;/i>
+	&lt;div class="modal--content">
+		&lt;i class="modal--close icon-close">&lt;/i>
 		&lt;h3>Hello&lt;/h3>
 		&lt;p>Random text here, something important.&lt;/p>
 	&lt;/div>
@@ -86,7 +86,7 @@ Modal.show('#error');
 Modal.hide()
 				</code></pre>
 
-				<p><button class="button" onclick="Modal.show('#error')">Modal.show()</button></p>
+				<p><button class="button button--default" onclick="Modal.show('#error')">Modal.show()</button></p>
 
 
 			</div>
@@ -147,8 +147,8 @@ Modal.hide()
 
 
 		<div id="terms" class="modal">
-			<button class="icon close" aria-label="close"></button>
-			<div class="content" role="dialog">
+			<button class="icon modal--close" aria-label="close"></button>
+			<div class="modal--content" role="dialog">
 				<h3>Hello</h3>
 				<p>Random text here, something important.</p>
 				<p>Here, we showcase one option for the placement of the "close" icon.</p>
@@ -156,12 +156,12 @@ Modal.hide()
 		</div>
 
 		<div id="error" class="modal" tab-index="0">
-			<div class="content" role="dialog">
-				<button class="icon close" aria-label="close"></button>
+			<div class="modal--content" role="dialog">
+				<button class="icon modal--close" aria-label="close"></button>
 				<h3>Error!</h3>
 				<p>These aren't the droids you're looking for.</p>
 				<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>
-				<p><button class="button" onclick="Modal.hide()">Modal.hide()</button></p>
+				<p><button class="button button--default" onclick="Modal.hide()">Modal.hide()</button></p>
 			</div>
 		</div>
 
