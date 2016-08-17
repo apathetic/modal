@@ -1,5 +1,5 @@
 {
-  "name": "@apatheticwes/modal",
+  "name": "@hugeinc/modal",
   "description": "A simple modal framework",
   "author": "wes hatch",
   "version": "0.1.1",
@@ -9,7 +9,7 @@
   "jsnext:main": "./dist/modal.es6.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apathetic/modals.git"
+    "url": "https://github.com/hugeinc/component-modal.git"
   },
   "keywords": [
     "modal",
