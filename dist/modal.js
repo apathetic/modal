@@ -76,8 +76,8 @@ var Modal = (function () {
     var close = modal.querySelector('.modal--close');
 
     modal.addEventListener('click', hide);
-    close.addEventListener('click', hide);
-    content.addEventListener('click', function (e) {
+    close && close.addEventListener('click', hide);
+    content && content.addEventListener('click', function (e) {
       e.stopPropagation();
     });
   }
