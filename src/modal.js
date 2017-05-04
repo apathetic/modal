@@ -21,16 +21,14 @@
  *
  */
 
-/**
- * Accessible Modal Window
- * @type {Object}
- */
-
 let active;
 
+/**
+ * Initialize the component, cache trigger and modal elements.
+ */
 function init() {
-  var triggers = document.querySelectorAll('[data-modal]');
-  var modals = document.querySelectorAll('.modal');
+  const triggers = document.querySelectorAll('[data-modal]');
+  const modals = document.querySelectorAll('.modal');
 
   Array.prototype.forEach.call(triggers, bindTrigger);
   Array.prototype.forEach.call(modals, bindModal);
@@ -38,44 +36,55 @@ function init() {
   document.body.addEventListener('keyup', function(e) {
     if (e.keyCode === 27) { hide(); }
   });
-  // document.addEventListener('focus', function(e) {
-  //   if (active && !active.contains(e.target)) {
-  //     e.stopPropagation();
-  //     active.focus();
-  //   }
-  // }, true);
 }
 
+/**
+ * Show the modal referenced by its selector.
+ * @param {String} target  The querySelector of the modal to display.
+ */
 function show(target) {
   active = document.querySelector(target);
   active.classList.add('active');
-  document.body.classList.add('is-modal');  // is modal? has modal?  For overflowing on the body ...
+  document.body.classList.add('is-modal');  // is modal? has modal?
 }
 
-function hide(e) {
+/**
+ * Hide the currently-active modal.
+ */
+function hide() {
   if (active) {
     active.classList.remove('active');
     active = false;
   }
+
   document.body.classList.remove('is-modal');
 }
 
+/**
+ * Bind a modal's actions.
+ * @param {HTMLElement} modal  The HTMLElement of the modal.
+ */
 function bindModal(modal) {
-  var content = modal.querySelector('.modal--content');
-  var close = modal.querySelector('.modal--close');
+  const content = modal.querySelector('.modal--content');
+  const close = modal.querySelector('.modal--close');
 
   modal.addEventListener('click', hide);
   close.addEventListener('click', hide);
-  content.addEventListener('click', function(e) {
+  content.addEventListener('click', (e) => {
     e.stopPropagation();
   });
 }
 
+/**
+ * Bind a modal trigger's actions.
+ * @param {HTMLElement} trigger  The HTMLElement of the modal trigger.
+ */
 function bindTrigger(trigger) {
   var targetID = trigger.getAttribute('data-modal');
 
   trigger.addEventListener('click', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     show(targetID);
   });
 }
