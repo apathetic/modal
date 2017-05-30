@@ -2,7 +2,7 @@
   "name": "@apatheticwes/modal",
   "description": "A simple modal framework",
   "author": "wes hatch",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "./dist/modal.cjs.js",
   "broswer": "./dist/modal.js",
