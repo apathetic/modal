@@ -63,8 +63,10 @@ var Modal = (function () {
   function show(target) {
     hide();  // do not allow modals to stack (?)
     active = document.querySelector(target);
-    active.classList.add(options.active);
-    document.body.classList.add(options.clip);
+    if (active) {
+      active.classList.add(options.active);
+      document.body.classList.add(options.clip);
+    }
   }
 
   /**
