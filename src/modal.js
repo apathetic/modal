@@ -89,8 +89,6 @@ function bindModal(modal) {
   const content = modal.querySelector(options.content);
   const close = modal.querySelector(options.close);
 
-  window.console.log(content);
-
   modal.addEventListener('click', hide);
   close && close.addEventListener('click', hide);
   content && content.addEventListener('click', (e) => {
