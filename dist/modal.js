@@ -9,8 +9,8 @@ var Modal = (function () {
     ...
 
     <div id="terms" class="modal">
-      <i class="icon icon-close"></i>
-      <div class="error content">
+      <i class="modal__close icon icon-close"></i>
+      <div class="modal__content">
         <p>lorem ipsom...</p>
       </div>
     </div>
@@ -26,10 +26,13 @@ var Modal = (function () {
 
   var active;
   var options = {
+    // classes
     clip: 'is-modal',  // is modal? has modal?
     active: 'active',
-    content: 'modal--content',
-    close: 'modal--close',
+
+    // selectors
+    content: '.modal__content',
+    close: '.modal__close',
     triggers: '[data-modal]',
     modals: '.modal'
   };
@@ -91,9 +94,12 @@ var Modal = (function () {
     var content = modal.querySelector(options.content);
     var close = modal.querySelector(options.close);
 
+    window.console.log(content);
+
     modal.addEventListener('click', hide);
     close && close.addEventListener('click', hide);
     content && content.addEventListener('click', function (e) {
+      window.console.log('afsd');
       e.stopPropagation();
     });
   }

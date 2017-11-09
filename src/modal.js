@@ -6,8 +6,8 @@
   ...
 
   <div id="terms" class="modal">
-    <i class="icon icon-close"></i>
-    <div class="error content">
+    <i class="modal__close icon icon-close"></i>
+    <div class="modal__content">
       <p>lorem ipsom...</p>
     </div>
   </div>
@@ -23,10 +23,13 @@
 
 let active;
 let options = {
+  // classes
   clip: 'is-modal',  // is modal? has modal?
   active: 'active',
-  content: 'modal--content',
-  close: 'modal--close',
+
+  // selectors
+  content: '.modal__content',
+  close: '.modal__close',
   triggers: '[data-modal]',
   modals: '.modal'
 };
@@ -86,9 +89,12 @@ function bindModal(modal) {
   const content = modal.querySelector(options.content);
   const close = modal.querySelector(options.close);
 
+  window.console.log(content);
+
   modal.addEventListener('click', hide);
   close && close.addEventListener('click', hide);
   content && content.addEventListener('click', (e) => {
+    window.console.log('afsd');
     e.stopPropagation();
   });
 }
