@@ -1,13 +1,16 @@
 .modal {
-	/*display: none;*/
 	background: rgba(0,0,0, 0.75);
-	position: fixed;
-	top:0;
 	bottom: 0;
-	left: 0;
-	right:0;
 	height: 0;
-	overflow: hidden;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;	
+	position: fixed;
+	right:0;
+	top:0;
+	transition: opacity 0.2s ease 0s, height 0s ease 0.2s;
+	transition-delay: 0s, 0.2s;
+	z-index: -1;
 }
 
 .modal__content {
@@ -17,7 +20,7 @@
 
 	max-height: 60vh;
 	overflow: auto;
-
+	
 	padding: 20px;
 	background: #fff;
 	border-radius: 4px;
@@ -25,9 +28,9 @@
 
 	transform: translateY(-30px) scale(1.1);
 	opacity: 0;
-
-	transition: all 0.4s;
-    transition-delay: 0.2s;
+	pointer-events: none;
+	transition: all 0.2s;
+	transition-delay: 0.2s;
 }
 
 .modal__close {
@@ -46,14 +49,15 @@
 }
 
 .modal.active {
-	/*display: block;*/
 	height: 100%;
+	opacity: 1;
 	z-index: 1000;
 }
 
 .modal.active .modal__content {
 	transform: translateY(0) scale(1);
 	opacity: 1;
+	pointer-events: none;
 }
 
 .is-modal {
