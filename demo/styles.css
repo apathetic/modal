@@ -10,7 +10,6 @@
 	top:0;
 	transition: opacity 0.2s ease 0s, height 0s ease 0.2s;
 	transition-delay: 0s, 0.2s;
-	z-index: -1;
 }
 
 .modal__content {
